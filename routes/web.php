@@ -12,7 +12,7 @@ use App\Http\Controllers\Categories\SenseController;
 use App\Http\Controllers\Categories\ShapeController;
 use App\Http\Controllers\Categories\DirectionController;
 use App\Http\Controllers\Categories\ColorsController;
-
+use App\Http\Controllers\front\MainPage;
 use App\Models\ColorsModel;
 
 /*
@@ -77,3 +77,8 @@ Route::group([
         Route::resource('color', ColorsController::class);
     });
 });
+
+
+//Wep front 
+
+Route::get('egitim',[MainPage::class,'index'])->name('education');
