@@ -13,6 +13,7 @@ use App\Http\Controllers\Categories\ShapeController;
 use App\Http\Controllers\Categories\DirectionController;
 use App\Http\Controllers\Categories\ColorsController;
 use App\Http\Controllers\front\MainPage;
+use App\Http\Controllers\front\FrontCategories;
 use App\Models\ColorsModel;
 
 /*
@@ -81,4 +82,17 @@ Route::group([
 
 //Wep front 
 
-Route::get('egitim',[MainPage::class,'index'])->name('education');
+Route::get('egitim', [MainPage::class, 'index'])->name('education');
+Route::get('gizlilik.html', function () {
+    return view('front.gizlilik');
+});
+
+Route::get('/renkler', [FrontCategories::class, 'renkler'])->name('renkler');
+Route::get('/sekiller', [FrontCategories::class, 'sekiller'])->name('sekiller');
+Route::get('/miktarlar', [FrontCategories::class, 'miktarlar'])->name('miktarlar');
+Route::get('/karsilastirmalar', [FrontCategories::class, 'karsilastirmalar'])->name('karsilastirmalar');
+Route::get('/boyutlar', [FrontCategories::class, 'boyutlar'])->name('boyutlar');
+Route::get('/konumlar', [FrontCategories::class, 'konumlar'])->name('konumlar');
+Route::get('/rakamlar', [FrontCategories::class, 'rakamlar'])->name('rakamlar');
+Route::get('/duyular', [FrontCategories::class, 'duyular'])->name('duyular');
+Route::get('/duygular', [FrontCategories::class, 'duygular'])->name('duygular');
